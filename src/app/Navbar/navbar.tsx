@@ -1,5 +1,4 @@
 "use client"
-import { Badge } from "@/components/ui/badge"
 import { Button } from "@/components/ui/button"
 import { Input } from "@/components/ui/input"
 import { Sheet, SheetContent, SheetTrigger } from "@/components/ui/sheet"
@@ -7,7 +6,6 @@ import { Heart, Menu, Search, ShoppingCart, Store, User } from "lucide-react"
 import Link from "next/link"
 import Image from "next/image"
 import Logo from '@/app/Navbar/Logo.png'
-
 export default function Navbar() {
   return (
     <header className="sticky top-0 z-50 w-full border-b bg-background/95 backdrop-blur supports-[backdrop-filter]:bg-background/60 ">
@@ -41,7 +39,7 @@ export default function Navbar() {
                 </Button>
                 <Button variant="ghost" className="justify-start">
                   <ShoppingCart className="mr-2 h-4 w-4" />
-                  Cart (3)
+                  Cart 
                 </Button>
               </div>
             </div>
@@ -57,7 +55,7 @@ export default function Navbar() {
         className="object-contain w-16 h-16"
       />
     </div>
-    <span className="hidden text-xl font-bold sm:inline-block text-pink-700">ShopHub</span>
+    <span className="hidden text-xl font-bold sm:inline-block text-pink-700">OwnStyle</span>
   </Link>
 </div>
 

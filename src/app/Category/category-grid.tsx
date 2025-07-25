@@ -5,16 +5,6 @@ import {
   Smartphone,
   Car,
   Phone,
-  Monitor,
-  BookOpen,
-  Shirt,
-  Home,
-  PawPrint,
-  Church,
-  MousePointer,
-  Bed,
-  Droplets,
-  Scissors,
 } from "lucide-react"
 
 const categories = [

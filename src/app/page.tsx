@@ -1,6 +1,6 @@
 
 import Navbar from "./Navbar/navbar";
-import ImageSlider from "./imageslider/image-slider";
+import HeroPage from "./imageslider/page";
 import Categories from "./Category/page";
 import Component from "./Fellbeforeyoubuy/card";
 import Productcard from "./Products/product-grid";
@@ -11,7 +11,7 @@ export default function Home() {
   return (
    <>
     <Navbar></Navbar>
-  <ImageSlider></ImageSlider>
+  <HeroPage></HeroPage>
   <Categories></Categories>
   <Component></Component>
   <Productcard></Productcard>
