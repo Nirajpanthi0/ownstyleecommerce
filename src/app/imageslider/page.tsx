@@ -6,10 +6,6 @@ export default function Page() {
   // Example with custom images
   const customImages = [
     "/placeholder.svg?height=500&width=900",
-    "/placeholder.svg?height=500&width=900",
-    "/placeholder.svg?height=500&width=900",
-    "/placeholder.svg?height=500&width=900",
-    "/placeholder.svg?height=500&width=900",
   ]
 
   return (

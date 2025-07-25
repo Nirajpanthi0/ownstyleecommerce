@@ -17,13 +17,10 @@ interface ImageSliderProps {
 
 export default function ImageSlider({
   images = [
-    "https://imgs.search.brave.com/FUrGF3liqk1B5pxb5n8UgnMggLOxd0B1mj16ZNIUCWo/rs:fit:860:0:0:0/g:ce/aHR0cHM6Ly9tZWRp/YS5nZXR0eWltYWdl/cy5jb20vaWQvMTQw/NDc0OTA0MC9waG90/by9odW1hbi12cy1y/b2JvdC5qcGc_cz02/MTJ4NjEyJnc9MCZr/PTIwJmM9SWpsR1N2/U3FxOC1HLU16YzZD/Rnh3SUZ6akFrNmNv/Q2x1N1NSWlEyWGdl/VT0",
-    "https://surprise-inside.vercel.app/_next/image?url=https%3A%2F%2Fres.cloudinary.com%2Fdqn47mkck%2Fimage%2Fupload%2Fv1749261139%2Fproducts%2F1749261138329-teddybear.avif&w=640&q=75",
     "https://imgs.search.brave.com/Pc3hotg6l4ut-WV7V9LIIhu3kWSb17v0qSikzgzS7KU/rs:fit:860:0:0:0/g:ce/aHR0cHM6Ly9jZG4t/ZnJvbnQuZnJlZXBp/ay5jb20vaG9tZS9h/bm9uLXJ2bXAvY3Jl/YXRpdml0eS9pbWFn/ZS1nZW5lcmF0aW9u/LW5ldy53ZWJwP3c9/MjAwMA",
   ],
   autoPlay = true,
   autoPlayInterval = 4000,
-  showDots = true,
   showArrows = true,
   className = "",
 }: ImageSliderProps) {
@@ -31,10 +28,6 @@ export default function ImageSlider({
   const [isPlaying, setIsPlaying] = useState(autoPlay)
   const [touchStart, setTouchStart] = useState(0)
   const [touchEnd, setTouchEnd] = useState(0)
-
-  const goToSlide = useCallback((index: number) => {
-    setCurrentIndex(index)
-  }, [])
 
   const goToNext = useCallback(() => {
     setCurrentIndex((prevIndex) => (prevIndex === images.length - 1 ? 0 : prevIndex + 1))
@@ -124,6 +117,7 @@ export default function ImageSlider({
               />
             </div>
           ))}
+          
         </div>
 
         {/* Navigation Arrows */}
@@ -149,11 +143,6 @@ export default function ImageSlider({
             </Button>
           </>
         )}
-
-
-        {/* Image Counter */}
-        <div className="absolute top-4 left-4   px-3 py-1 rounded-full text-sm">
-        </div>
       </div> 
 
     </div>
