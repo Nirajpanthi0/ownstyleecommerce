@@ -15,7 +15,7 @@ export default function Component() {
       price: "Rs. 320",
       originalPrice: null,
       discount: null,
-      image: "/placeholder.svg?height=300&width=300",
+      image:"",
       description:
         "Beautiful handcrafted doll perfect for children. Made with high-quality materials and attention to detail.",
       video: "/placeholder.mp4",

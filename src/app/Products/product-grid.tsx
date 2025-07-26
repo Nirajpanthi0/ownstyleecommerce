@@ -7,7 +7,7 @@ const products = [
   {
     id: 1,
     name: "iPhone 15 Pro max double",
-    image: "/placeholder.svg?height=200&width=200",
+    image: "",
     rating: 4,
     reviewCount: 2,
     price: 1800,

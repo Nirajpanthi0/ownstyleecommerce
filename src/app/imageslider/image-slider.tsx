@@ -1,9 +1,8 @@
 "use client"
 
 import type React from "react"
-
 import { Button } from "@/components/ui/button"
-import { ChevronLeft, ChevronRight, } from "lucide-react"
+import { ChevronLeft, ChevronRight } from "lucide-react"
 import { useCallback, useEffect, useState } from "react"
 
 interface ImageSliderProps {
@@ -44,7 +43,6 @@ export default function ImageSlider({
   // Auto-play functionality
   useEffect(() => {
     if (!isPlaying) return
-
     const interval = setInterval(goToNext, autoPlayInterval)
     return () => clearInterval(interval)
   }, [isPlaying, goToNext, autoPlayInterval])
@@ -60,11 +58,9 @@ export default function ImageSlider({
 
   const handleTouchEnd = () => {
     if (!touchStart || !touchEnd) return
-
     const distance = touchStart - touchEnd
     const isLeftSwipe = distance > 50
     const isRightSwipe = distance < -50
-
     if (isLeftSwipe) {
       goToNext()
     } else if (isRightSwipe) {
@@ -84,7 +80,6 @@ export default function ImageSlider({
         togglePlayPause()
       }
     }
-
     window.addEventListener("keydown", handleKeyDown)
     return () => window.removeEventListener("keydown", handleKeyDown)
   }, [goToPrevious, goToNext])
@@ -94,7 +89,7 @@ export default function ImageSlider({
   }
 
   return (
-    <div className={`relative w-full max-w-7xl  mx-auto overflow-hidden rounded-lg shadow-lg    mt-10 ${className}`}>
+    <div className={`relative w-full overflow-hidden rounded-lg shadow-lg ${className}`}>
       {/* Main Image Container */}
       <div
         className="relative h-96 md:h-[500px] bg-black"
@@ -117,7 +112,6 @@ export default function ImageSlider({
               />
             </div>
           ))}
-          
         </div>
 
         {/* Navigation Arrows */}
@@ -143,8 +137,7 @@ export default function ImageSlider({
             </Button>
           </>
         )}
-      </div> 
-
+      </div>
     </div>
   )
 }
