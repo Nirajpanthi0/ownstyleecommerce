@@ -18,13 +18,13 @@ export default function ImageSlider({
   images = [
     "https://imgs.search.brave.com/Pc3hotg6l4ut-WV7V9LIIhu3kWSb17v0qSikzgzS7KU/rs:fit:860:0:0:0/g:ce/aHR0cHM6Ly9jZG4t/ZnJvbnQuZnJlZXBp/ay5jb20vaG9tZS9h/bm9uLXJ2bXAvY3Jl/YXRpdml0eS9pbWFn/ZS1nZW5lcmF0aW9u/LW5ldy53ZWJwP3c9/MjAwMA",
   ],
-  autoPlay = true,
+
   autoPlayInterval = 4000,
   showArrows = true,
   className = "",
 }: ImageSliderProps) {
   const [currentIndex, setCurrentIndex] = useState(0)
-  const [isPlaying, setIsPlaying] = useState(autoPlay)
+  
   const [touchStart, setTouchStart] = useState(0)
   const [touchEnd, setTouchEnd] = useState(0)
 
@@ -36,16 +36,9 @@ export default function ImageSlider({
     setCurrentIndex((prevIndex) => (prevIndex === 0 ? images.length - 1 : prevIndex - 1))
   }, [images.length])
 
-  const togglePlayPause = () => {
-    setIsPlaying(!isPlaying)
-  }
+  
 
-  // Auto-play functionality
-  useEffect(() => {
-    if (!isPlaying) return
-    const interval = setInterval(goToNext, autoPlayInterval)
-    return () => clearInterval(interval)
-  }, [isPlaying, goToNext, autoPlayInterval])
+  
 
   // Touch handlers for mobile swipe
   const handleTouchStart = (e: React.TouchEvent) => {
@@ -77,7 +70,6 @@ export default function ImageSlider({
         goToNext()
       } else if (event.key === " ") {
         event.preventDefault()
-        togglePlayPause()
       }
     }
     window.addEventListener("keydown", handleKeyDown)
